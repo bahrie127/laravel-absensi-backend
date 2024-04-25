@@ -13,7 +13,7 @@ class PermissionController extends Controller
         $permissions = Permission::with('user')
             ->when($request->input('name'), function ($query, $name) {
                 $query->whereHas('user', function ($query) use ($name) {
-                    $query->where('name', 'like', "%.$name.%");
+                    $query->where('name', 'like', '%' . $name . '%');
                 });
             })->orderBy('id', 'desc')->paginate(10);
         return view('pages.permission.index', compact('permissions'));
