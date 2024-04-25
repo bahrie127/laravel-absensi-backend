@@ -1,0 +1,559 @@
+{
+	"info": {
+		"_postman_id": "52ff7f95-d0ac-4b1a-a3aa-f90990a5f837",
+		"name": "FIC16-Absensi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3117985",
+		"_collection_link": "https://bold-satellite-2123.postman.co/workspace/New-Team-Workspace~82ebd54c-ab06-414e-a28c-44644a99c1b6/collection/3117985-52ff7f95-d0ac-4b1a-a3aa-f90990a5f837?action=share&source=collection_link&creator=3117985"
+	},
+	"item": [
+		{
+			"name": "api login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"bahri@fic16.com\",\n    \"password\":\"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "response 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"bahri@fic16.com\",\n    \"password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Apr 2024 14:25:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 11,\n        \"name\": \"Bahri Admin\",\n        \"email\": \"bahri@fic16.com\",\n        \"email_verified_at\": \"2024-04-18T14:45:59.000000Z\",\n        \"two_factor_secret\": null,\n        \"two_factor_recovery_codes\": null,\n        \"two_factor_confirmed_at\": null,\n        \"created_at\": \"2024-04-18T14:45:59.000000Z\",\n        \"updated_at\": \"2024-04-18T14:45:59.000000Z\",\n        \"phone\": null,\n        \"role\": \"user\",\n        \"position\": null,\n        \"department\": null,\n        \"face_embedding\": null,\n        \"image_url\": null\n    },\n    \"token\": \"1|XQCX3ZrO15LLIuLjZ2tmMdCBD91nwTXudwwSz1M4aaf7d09e\"\n}"
+				}
+			]
+		},
+		{
+			"name": "api logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|XQCX3ZrO15LLIuLjZ2tmMdCBD91nwTXudwwSz1M4aaf7d09e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api get user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|XQCX3ZrO15LLIuLjZ2tmMdCBD91nwTXudwwSz1M4aaf7d09e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api get company",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|RiHOf6ayXQPvyYPVK9iSdTFEGh0W6MPiwxtcXXlHda4aa456",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|XQCX3ZrO15LLIuLjZ2tmMdCBD91nwTXudwwSz1M4aaf7d09e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/company",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api checkin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|aTuN8zFN6uPitlLokBRMZfT2lk0UO2DgN3CL8vmIbd743754",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\":\"-123213.321\",\n    \"longitude\":\"12321.000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/checkin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"checkin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|aTuN8zFN6uPitlLokBRMZfT2lk0UO2DgN3CL8vmIbd743754",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\":\"-2213.321\",\n    \"longitude\":\"123.340\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api is checkedin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|aTuN8zFN6uPitlLokBRMZfT2lk0UO2DgN3CL8vmIbd743754",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\":\"-2213.321\",\n    \"longitude\":\"123.340\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/is-checkin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"is-checkin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api get notes by user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|aTuN8zFN6uPitlLokBRMZfT2lk0UO2DgN3CL8vmIbd743754",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\":\"-2213.321\",\n    \"longitude\":\"123.340\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/is-checkin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"is-checkin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api update profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|aTuN8zFN6uPitlLokBRMZfT2lk0UO2DgN3CL8vmIbd743754",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/bahri/Pictures/atasan1.jpeg"
+						},
+						{
+							"key": "face_embedding",
+							"value": "ladflksdjaflsadkfjsdlkfjsadlkfjdskfasdasdsa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/update-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"update-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api create permission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|8axjqSftocix91ouBSMgpVF4XeWdQCZ9xLlfsopq9d466da3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/bahri/Pictures/menu14.png"
+						},
+						{
+							"key": "date",
+							"value": "2024-04-23",
+							"type": "text"
+						},
+						{
+							"key": "reason",
+							"value": "tugas ke balik papan 2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/api-permissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"api-permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api create note",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|8axjqSftocix91ouBSMgpVF4XeWdQCZ9xLlfsopq9d466da3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"meeting besok pagi jam 10\",\n    \"note\":\"siapkan bekal yang enak enak\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/api-notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"api-notes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
