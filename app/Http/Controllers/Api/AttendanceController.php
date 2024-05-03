@@ -69,8 +69,11 @@ class AttendanceController extends Controller
             ->where('date', date('Y-m-d'))
             ->first();
 
+        $isCheckout = $attendance ? $attendance->time_out : false;
+
         return response([
             'checkedin' => $attendance ? true : false,
+            'checkedout' => $isCheckout ? true : false,
         ], 200);
     }
 }

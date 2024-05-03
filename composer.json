@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "kreait/laravel-firebase": "^5.8",
         "laravel/fortify": "^1.21",
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
