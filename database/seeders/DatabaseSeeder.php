@@ -22,6 +22,12 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('12345678'),
         ]);
 
+        User::factory()->create([
+            'name' => 'Bahri',
+            'email' => 'bahri2@fic16.com',
+            'password' => Hash::make('12345678'),
+        ]);
+
         // data dummy for company
         \App\Models\Company::create([
             'name' => 'PT. FIC16',
