@@ -19,10 +19,10 @@
                 </div>
             </div>
             <div class="section-body">
-                <h2 class="section-title">Edit Permission</h2>
+                {{-- <h2 class="section-title">Edit Permission</h2>
                 <p class="section-lead">
                     Perbarui informasi tentang izin karyawan.
-                </p>
+                </p> --}}
 
                 <div class="row mt-sm-4">
                     <div class="col-12 col-md-12 col-lg-12">

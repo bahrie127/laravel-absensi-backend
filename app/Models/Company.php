@@ -18,5 +18,6 @@ class Company extends Model
         'radius_km',
         'time_in',
         'time_out',
+        'attendance_type',
     ];
 }

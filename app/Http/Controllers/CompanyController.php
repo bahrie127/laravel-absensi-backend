@@ -33,6 +33,7 @@ class CompanyController extends Controller
             'radius_km' => 'required',
             'time_in' => 'required',
             'time_out' => 'required',
+            'attendance_type' => 'required',
         ]);
 
         $company->update([
@@ -44,6 +45,7 @@ class CompanyController extends Controller
             'radius_km' => $request->radius_km,
             'time_in' => $request->time_in,
             'time_out' => $request->time_out,
+            'attendance_type' => $request->attendance_type,
         ]);
 
         return redirect()->route('companies.show', 1)->with('success', 'Company updated successfully');

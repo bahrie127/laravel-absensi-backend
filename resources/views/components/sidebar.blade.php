@@ -31,10 +31,19 @@
                 </a>
             </li>
 
+
+
             <li class="nav-item">
                 <a href="{{ route('permissions.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i>
                     <span>Permission</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('qr_absen.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i>
+                    <span>QR Absen</span>
                 </a>
             </li>
 

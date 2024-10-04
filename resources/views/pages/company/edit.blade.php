@@ -19,10 +19,10 @@
                 </div>
             </div>
             <div class="section-body">
-                <h2 class="section-title">Edit Profil Perusahaan</h2>
+                {{-- <h2 class="section-title">Edit Profil Perusahaan</h2>
                 <p class="section-lead">
                     Perbarui informasi tentang perusahaan Anda di halaman ini.
-                </p>
+                </p> --}}
 
                 <div class="row mt-sm-4">
                     <div class="col-12 col-md-12 col-lg-12">
@@ -84,6 +84,30 @@
                                                 value="{{ $company->time_out }}">
                                         </div>
                                     </div>
+                                    <div class="row">
+
+                                        <div class="form-group col-md-6 col-12">
+                                            <label>Is Attendance Type</label>
+                                            <select name="attendance_type" class="form-control" style="height: 40px;">
+                                                <option value="Face">
+                                                    Face</option>
+                                                <option value="QR">
+                                                    QR</option>
+                                                    <option value="None">
+                                                        None</option>
+                                            </select>
+                                        </div>
+                                        {{-- <div class="form-group col-md-6 col-12">
+                                            <label >Attendance Type</label>
+                                            <select name="attendance_type"  class="form-control">
+                                                <option value="Face" selected>Face</option>
+                                                <option value="QR">QR</option>
+                                                <option value="None">None</option>
+                                            </select>
+                                        </div> --}}
+
+                                    </div>
+
                                 </div>
                                 <div class="card-footer text-right">
                                     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>

@@ -27,10 +27,7 @@
                         @include('layouts.alert')
                     </div>
                 </div>
-                <h2 class="section-title">Permissions</h2>
-                <p class="section-lead">
-                    You can manage all Permissions, such as editing, deleting and more.
-                </p>
+
 
 
                 <div class="row mt-4">

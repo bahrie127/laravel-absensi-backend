@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ApprovedPermessionConfirmation;
 use Illuminate\Http\Request;
 use App\Models\Permission;
 use App\Models\User;
+use Carbon\Carbon;
 use Kreait\Firebase\Messaging\CloudMessage;
 use Kreait\Firebase\Messaging\Notification;
-
-
+use Resend\Laravel\Facades\Resend;
 
 class PermissionController extends Controller
 {
@@ -46,6 +47,18 @@ class PermissionController extends Controller
         $str = $request->is_approved == 1 ? 'Disetujui' : 'Ditolak';
         $permission->save();
         $this->sendNotificationToUser($permission->user_id, 'Status Izin anda adalah ' . $str);
+        $user = User::find($permission->user_id);
+        $permission_date = $permission->date_permission;
+        $date = Carbon::parse($permission_date)->translatedFormat('d F Y');
+        $reason = $permission->reason;
+      if ($request->is_approved == 1) {
+        Resend::emails()->send([
+            'from' =>  'hey@jagoflutter.com',
+            'to' => $user->email,
+            'subject' => 'Approved Permession - ' . $user->name,
+            'html' => (new ApprovedPermessionConfirmation($user, $date, $reason))->render(),
+        ]);
+      }
         return redirect()->route('permissions.index')->with('success', 'Permission updated successfully');
     }
 

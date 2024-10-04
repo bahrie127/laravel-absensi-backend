@@ -19,10 +19,10 @@
                 </div>
             </div>
             <div class="section-body">
-                <h2 class="section-title">Profil Perusahaan</h2>
+                {{-- <h2 class="section-title">Profil Perusahaan</h2>
                 <p class="section-lead">
                     Informasi tentang perusahaan Anda.
-                </p>
+                </p> --}}
 
                 <div class="row mt-sm-4">
                     <div class="col-12 col-md-12 col-lg-12">
@@ -67,6 +67,13 @@
                                     <div class="form-group col-md-6 col-12">
                                         <label>Waktu Pulang</label>
                                         <p>{{ $company->time_out }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="form-group col-md-6 col-12">
+                                        <label>Tipe Absensi</label>
+                                        <p>{{ $company->attendance_type }}</p>
                                     </div>
                                 </div>
                             </div>

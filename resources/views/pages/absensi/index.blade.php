@@ -27,17 +27,17 @@
                         @include('layouts.alert')
                     </div> --}}
                 </div>
-                <h2 class="section-title">Attendances</h2>
+                {{-- <h2 class="section-title">Attendances</h2>
                 <p class="section-lead">
                     You can manage all Attendances, such as editing, deleting and more.
-                </p>
+                </p> --}}
 
 
                 <div class="row mt-4">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>All Posts</h4>
+                                <h4>All Attendance</h4>
                             </div>
                             <div class="card-body">
 
